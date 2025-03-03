@@ -10,11 +10,12 @@ import today.opai.api.interfaces.modules.values.BooleanValue;
 import today.opai.example.EventScriptModule;
 import today.opai.example.ExampleExtension;
 
-public class SlowAutoBlock extends EventScriptModule {
+public class AutoBlock extends EventScriptModule {
 
     public final BooleanValue onlySword = ExampleExtension.getAPI().getValueManager().createBoolean("Only Sword", true);
-    public SlowAutoBlock() {
-        super("SlowAutoBlock","send attack packet and use right click",EnumModuleCategory.COMBAT);
+
+    public AutoBlock() {
+        super("AutoBlock","send attack packet and use right click",EnumModuleCategory.COMBAT);
         super.setEventHandler(this);
         super.addValues(onlySword);
     }
@@ -35,6 +36,5 @@ public class SlowAutoBlock extends EventScriptModule {
                 ExampleExtension.openAPI.getLocalPlayer().rightClickMouse();
             }
         }
-
     }
 }
