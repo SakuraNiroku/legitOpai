@@ -5,6 +5,7 @@ import today.opai.api.OpenAPI;
 import today.opai.api.annotations.ExtensionInfo;
 import today.opai.api.features.ExtensionModule;
 import today.opai.example.commands.BindsCommand;
+import today.opai.example.commands.IRCCountCommand;
 import today.opai.example.modules.SlowAutoBlock;
 
 // Required @ExtensionInfo annotation
@@ -17,6 +18,7 @@ public class ExampleExtension extends Extension {
         ExampleExtension.openAPI = openAPI;
         // Command
         openAPI.registerFeature(new BindsCommand());
+        openAPI.registerFeature(new IRCCountCommand());
 
         // Modules
         openAPI.registerFeature(new SlowAutoBlock());
